@@ -1,0 +1,53 @@
+docker ps 
+docker ps -a 
+
+docker images
+
+docker -v
+
+docker search имя того что ищем
+
+docker pull tomcat
+docker pull alpine
+docker pull nginx
+docker pull nginx:1.21.1-alpine
+
+docker run -it -p 1234:8080 tomcat запустить контенер интерактивно(консоль не отдастца) на порту 1234 хоста, проброс с порта контейнера 8080
+Запускать можно по имени или тагу
+
+docker run -it -p 2134:8080 17d7a69ae877
+
+docker run -d -p 2134:8080 17d7a69ae877 позволяет бежать ему на бекграунде
+
+docker run -d -p 8888:80 c31fe73098ae
+
+docker run -d -p 7777:80 anton:v1
+
+docker run -d --name имя -p 7777:80 anton:v1 для задания имени
+можно добавить ключ -rm при остановки контейнер удалится.
+
+docker rmi имя маджа или его ид, удалит выбранный имадж
+
+docker rm имя контейнера или его ид, удалит выбранный контейнер
+
+docker rm $(docker ps -a -q) ключ q выдаст id всех контейнеров, а замет удалит это все
+docker rmi $(docker images -q)
+
+
+docker build -t имя имиджа: таг .(означает тут локально)
+docker build -t anton:v1 .
+
+docker tag anton:v1 anton:v2 поменяет тег и создаст копию образа
+
+docker exec -it id контейнера /bin/bash
+docker exec -it 020671f34a19 /bin/bash
+
+docker commit id бегущего контейнера имя нового контейнера:таг
+docker commit 020671f34a19 anton:v2
+
+docker inspect имя контейнера, выдает инфу о контейнере
+
+docker logs контейнер нейм, показывает логи данного контейнера
+
+
+
