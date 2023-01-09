@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+# версия апи с которой работает данный объект
+kind: ReplicaSet
+# тип объекта
+metadata:
+    name: my-replicaset
+# имя указываем  
+spec:
+    replicas: 2
+# указываем количество реплик которое запустится с запуском данного репликасета
+    selector:
+        matchLabels:
+            app: my-app
+#  тут говорится селектору, что он управлет подами my-app         
+    template:
+        metadata:
+            labels:
+                app: my-app
+#  тут, реплика сет работает с темплейтом пода, у подов которые мы запустим должны быть теги  my-app  
+        spec:
+            containers:
+              - image: nginx:1.12
+                name: nginx
+                ports:
+                  - containerPort: 80 
