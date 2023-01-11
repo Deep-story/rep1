@@ -18,7 +18,8 @@ kubectl create -f replicaset.yaml говорим кубу создать под 
 kubectl apply -f replicaset.yaml
 
 kubectl get pod показывает запущенные поды
-kubectl get pod --show-labels
+kubectl get pod --show-labels покажет лейблы бегущих подов
+ключ -w позволить в реальном времени наблюдать 
 
 kubectl completion загружаем , позволит пользоватся табом как в линухе
 
@@ -28,9 +29,23 @@ kubectl delete -all удалит все поды
 
 kubectl get replicaset
 
+kubectl get deployment
+
 kubectl scale --replicas=2 replicaset my-replicaset установит количество реплик в данном репликосете в значение 2
 
 kubectl describe replicaset my-replicaset команда которая покажет нам некую полезную информацию
+
+kubectl rollout undo deployment имя деплоймента , позволит вернутся на предыдущую версию
+kubectl rollout undo deployment my-deployment --to-revision=1 откатится на 2 версии назад
+
+kubectl logs name deployment выведет логи указанного деплоя
+
+ubectl explain имя абстракции описывает все о нужной абстракции
+
+
+
+
+
 
 
 

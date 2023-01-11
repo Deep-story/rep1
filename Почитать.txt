@@ -11,3 +11,8 @@ https://docs.gitlab.com/ee/ci/docker/using_docker_build.html
 https://docs.docker.com/build/building/base-images/
 https://habr.com/ru/company/southbridge/blog/329138/
 5
+https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/
+
