@@ -1,0 +1,71 @@
+    1  ping 8.8.8.8
+    2  sestatus
+    3  cat /etc/selinux/config
+    4  yum update -y
+    5  yum upgrade -y
+    6  yum install mc nano -y
+    7  nano /etc/selinux/config
+    8  sestatus
+    9  setenforce 0
+   10  sestatus
+   11  nmtui
+   12  hostnamectl set-hostname zabbix-62
+   13  nmtui
+   14  yum install epel-release
+   15  yum -y install ovirt-guest-agent
+   16  yum install ovirt-guest-agent-common -y
+   17  reboot
+   18  sestatus
+   19  yum install ovirt-guest-agent-common
+   20  yum -y install ovirt-guest-agent
+   21  systemctl status ovirt-guest-agent
+   22  systemctl status ovirt-guest-agent-common
+   23  yum -y install qemu-guest-agent
+   24  systemctl enable --now qemu-guest-agent
+   25  systemctl status qemu-guest-agent
+   26  timedatectl
+   27  yum install chrony -y
+   28  nano /etc/chrony.conf
+   29  systemctl enable --now chronyd
+   30  systemctl status chronyd
+   31  chronyc sources
+   32  chronyc tracking
+   33  timedatectl
+   34  shutdown now
+   35  exit
+   36  sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+   37  sudo dnf -qy module disable postgresql
+   38  dnf install -y postgresql15-server
+   39  sudo /usr/pgsql-15/bin/postgresql-15-setup initdb
+   40  systemctl enable postgresql-15
+   41  systemctl start postgresql-15
+   42  systemctl status postgresql-15
+   43  postgres --version
+   44  psql --version
+   45  -u postgres psql
+   46  sudo -u postgres psql
+   47  su postgres
+   48  history
+   49  df -h
+   50  shutdown now
+   51  fdisk -l
+
+   77  umount /dev/mapper/almalinux-home
+   78  lvremove /dev/mapper/almalinux-home
+   79  df -h
+   80  lvextend -l +100%FREE /dev/mapper/almalinux-root
+   81  xfs_growfs /dev/mapper/almalinux-root
+   82  df -h
+   84  fdisk -l
+   85  nano /etc/yum.repos.d/epel.repo
+
+   86  pkg search zabbix
+   87  dnf search zabbix
+   88  epel-release search zabbix
+
+   92  rpm -Uvh https://repo.zabbix.com/zabbix/5.2/rhel/8/x86_64/zabbix-release-5.2-1.el8.noarch.rpm
+   93  dnf clean all
+   94  dnf install zabbix-server-pgsql zabbix-web-pgsql zabbix-nginx-conf zabbix-agent
+  
+   99  pwd
+  100  history >> history03022023.txt
